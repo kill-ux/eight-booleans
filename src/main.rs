@@ -1,5 +1,6 @@
 // READ | CLEAR | SET | TOGGLE
-struct BitWise {
+#[derive(Clone, Copy)]
+struct BitWise{
     pub value: u8,
 }
 
@@ -15,6 +16,13 @@ impl BitWise {
         let mask: u8 = !(1u8 << index);
         self.value &= mask;
     }
+  
+    pub fn read(self,index: u8) -> Result<bool, String> {
+        if index > 7{
+            return Err("Choose an index between 0 and 7".to_string());
+        }
+        Ok(self.value >> index & 1 == 1)
+    }
 }
 
 fn main() {
@@ -22,4 +30,8 @@ fn main() {
     println!("{:08b}", bol_example.value);
     bol_example.clear(1);
     println!("{:08b}", bol_example.value);
+    let bit = BitWise {value:1};
+    for i in 0..=7{
+        println!(" index {i} = {}", bit.read(i).unwrap());
+    }
 }
