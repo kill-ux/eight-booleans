@@ -2,6 +2,9 @@
 struct BitWise(u8);
 
 impl BitWise {
+    pub fn read(){
+
+    }
 }
 
 fn main() {
