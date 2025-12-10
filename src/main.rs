@@ -14,9 +14,17 @@ impl BitWise {
     pub fn clear(&mut self, index: Index) {
         self.value &= !(1u8 << index.get());
     }
+  
+    pub fn read(self,index: Index) -> bool {
+        self.value >> index.get() & 1 == 1
+    }
 
-    pub fn read(self, index: Index) -> Result<bool, String> {
-        Ok(self.value >> index.get() & 1 == 1)
+    pub fn set(&mut self,index: Index, new_value: bool ) {
+        if new_value == true{
+            self.value = self.value | (1 << index.get());
+        }else{
+            self.value = self.value & !(1 << index.get());
+        }
     }
 
     pub fn toggle(&mut self, index: Index) {
