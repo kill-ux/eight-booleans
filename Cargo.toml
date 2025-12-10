@@ -10,7 +10,7 @@ readme = "README.md"
 repository = "https://github.com/kill-ux/eight-booleans.git"
 homepage = "https://github.com/kill-ux/eight-booleans.git"
 documentation = "https://github.com/kill-ux/eight-booleans.git"   # optional; docs.rs will host docs after publish
-keywords = ["bitwise", "bits", "flags", "boolean", "byte"]
+keywords = ["bitwise", "bits", "flags", "boolean", "byte", "byte_boolean", "data-structure"]
 categories = ["data-structures", "algorithms"]    # pick from crates.io category list
 publish = true
 
