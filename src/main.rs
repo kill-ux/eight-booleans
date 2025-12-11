@@ -4,7 +4,8 @@ fn main() {
     println!("=== ByteBool Operators Usage Example ===\n");
 
     // Create a new ByteBool instance (starts with all bits set to 0)
-    let mut bits = ByteBool::new();
+    let mut bits = ByteBool::default();
+    // let mut bits = ByteBool::<u16>::new();
     println!("Initial state:");
     bits.display();
     println!();
